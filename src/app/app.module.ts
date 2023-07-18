@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
+
 import { HeaderModule } from '@shared/layouts/header/header.module';
+import { SidebarModule } from '@shared/layouts/sidebar/sidebar.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { HeaderModule } from '@shared/layouts/header/header.module';
     MatSidenavModule,
 
     HeaderModule,
-    //SidebarModule,
+    SidebarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

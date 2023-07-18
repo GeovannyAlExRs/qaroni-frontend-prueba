@@ -1,5 +1,10 @@
 <mat-sidenav-container class="static bg-slate-50">
   <mat-sidenav #menu class="bg-transparent m-5">
+    <app-sidebar class="shadow-slate-600"
+                (menuToggle)="menu.toggle()"
+                [isAuthorized]="isAuthorized$ | async"
+                (signOut)="logoutUser()">
+  </app-sidebar>
   </mat-sidenav>
 
   <mat-sidenav-content>
