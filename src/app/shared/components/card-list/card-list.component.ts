@@ -3,9 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { ModalDetailComponent } from '../modal-detail/modal-detail.component';
 
-import { Observable } from 'rxjs';
-import { Store, select } from '@ngrx/store';
-
 @Component({
   selector: 'app-card-list',
   templateUrl: './card-list.component.html',
