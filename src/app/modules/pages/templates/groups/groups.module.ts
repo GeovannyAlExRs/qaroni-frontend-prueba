@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { GroupsRoutingModule } from './groups-routing.module';
 import { GroupsComponent } from './groups.component';
 
+import { CardHeaderGenericModule } from '@shared/layouts/card-header-generic/card-header-generic.module';
+import { CardListModule } from '@shared/components/card-list/card-list.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +13,10 @@ import { GroupsComponent } from './groups.component';
   ],
   imports: [
     CommonModule,
-    GroupsRoutingModule
+    GroupsRoutingModule,
+
+    CardHeaderGenericModule,
+    CardListModule,
   ]
 })
 export class GroupsModule { }
