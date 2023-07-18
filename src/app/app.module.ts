@@ -10,6 +10,18 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { HeaderModule } from '@shared/layouts/header/header.module';
 import { SidebarModule } from '@shared/layouts/sidebar/sidebar.module';
 
+import { environment } from '@env/environment';
+
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
+
+import { HttpClientModule } from '@angular/common/http';
+
+import { effects, reducers } from '@store/store';
+
+const StoreDevTools = !environment.production ? StoreDevtoolsModule.instrument({maxAge: 50}) : [];
+
 @NgModule({
   declarations: [
     AppComponent
@@ -23,6 +35,15 @@ import { SidebarModule } from '@shared/layouts/sidebar/sidebar.module';
 
     HeaderModule,
     SidebarModule,
+
+    HttpClientModule,
+
+    StoreDevTools,
+    StoreModule.forRoot(reducers, {
+      runtimeChecks: { strictActionImmutability: true, strictStateImmutability: true }
+    }),
+    EffectsModule.forRoot(effects),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
