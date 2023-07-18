@@ -33,7 +33,7 @@ export class UserEffects {
       .pipe(
         tap((response: UsersResponse) => {
           this.tokenService.saveToken(response.result[0].userId, response.result[0].access_token)
-          console.log('Successfully authenticated USER ID: ' + response.result[0].userId + ' TOKEN: ' + response.result[0].access_token);
+
           this.router.navigate(['/groups'])
 
         }),
