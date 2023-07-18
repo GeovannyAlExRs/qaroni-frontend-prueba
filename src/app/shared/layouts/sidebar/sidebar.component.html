@@ -1,0 +1,38 @@
+<div class="h-full bg-gray-800 rounded-md">
+  <div class="px-6 pt-8">
+    <div class="flex flex-row items-center justify-between">
+      <img width="40" alt="Angular Logo"
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+            />
+      <div class="text-right text-slate-300">
+        <h3 class="text-2xl tracking-widest">ANGULAR</h3>
+        <p class="text-xs">Geovanny Magallan</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="px-6 pt-4">
+    <div class="relative">
+      <div class="text-base absolute inset-y-0 left-0 flex items-center top-0 pl-2 pointer-events-none">
+        <i class="uil uil-search text-gray-500 stroke-current"></i>
+      </div>
+      <input type="text" class="w-full rounded pl-8 pr-4 py-2.5 text-xs font-light bg-gray-800 text-gray-400 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-500 focus:bg-gray-800" placeholder="search">
+    </div>
+  </div>
+
+  <div class="px-6 pt-4">
+    <hr class="border-gray-700">
+  </div>
+
+  <div class="px-6 pt-4">
+    <ul class="flex flex-col space-y-2">
+      <li [routerLink]="item.router" *ngFor="let item of menuList.accessLink" mat-list-item (click)="closeMenu()" class="cursor-pointer relative text-gray-500 hover:text-white focus-within:text-white">
+          <a (click)="logoutUser(item.name)" class="flex w-full py-2 pl-8 pr-4 text-sm rounded hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-500 focus:bg-gray-700">
+              <i [ngClass]="['uil',item.icon]"></i>
+              <span class="inline-block pl-2">{{item.name}}</span>
+          </a>
+      </li>
+    </ul>
+
+  </div>
+</div>
