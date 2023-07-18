@@ -18,6 +18,7 @@ npm i @ngrx/store-devtools@16.1.0
 
 npm i @ngneat/tailwind@7.0.3 
 npm install -D tailwindcss postcss autoprefixer
+npm install -D @tailwindcss/forms
 
 ## Code scaffolding
 
