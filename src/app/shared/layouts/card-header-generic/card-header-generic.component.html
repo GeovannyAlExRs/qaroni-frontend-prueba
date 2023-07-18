@@ -1,1 +1,32 @@
-<p>card-header-generic works!</p>
+<div class="mx-auto max-w-2xl lg:mx-0">
+
+  <div class="lg:flex lg:items-center lg:justify-between">
+    <div class="min-w-0 flex-1">
+      <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">{{title}}</h2>
+      <p class="mt-2 text-lg leading-8 text-gray-600">{{subtitle}}</p>
+
+      <div class="mt-1 flex sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
+        <div  *ngFor="let item of options1" mat-list-item>
+          <div class="mt-2 flex items-center text-sm text-gray-500">
+            <i [ngClass]="['uil',item.icon]"></i>
+            <span class=" pl-2">{{item.list}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 flex lg:ml-4 lg:mt-0">
+      <span class="hidden sm:block">
+
+        <div class="w-full">
+          <div class="relative border-red-400 flex w-full flex-wrap items-stretch mb-3">
+            <span class="z-10 h-full flex absolute text-center text-blueGray-300 text-sm items-center w-8 pl-3">
+              <i class="uil uil-search"></i>
+            </span>
+            <!-- [(ngModel)]="searchNews" (ngModelChange)="callSearch($event)" -->
+            <input placeholder="search news..." matInput class="border-blueGray-300 px-3 py-2 text-sm  w-full placeholder-blueGray-200 text-blueGray-700 relative bg-white rounded-md outline-none focus:ring focus:ring-lightBlue-500 focus:border-lightBlue-500 border border-solid transition duration-200 pl-10 ">
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
