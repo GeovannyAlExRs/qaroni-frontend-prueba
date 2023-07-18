@@ -6,9 +6,9 @@
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 
-    <form role="form" #f="ngForm" (ngSubmit)="loginUser(f)">
-      <div mat-form-field class="mb-4">
+    <form #f="ngForm" (ngSubmit)="loginUser(f)"> <!-- [formGroup]="formParent"-->
 
+      <div mat-form-field class="mb-4">
         <input matInput required ngModel name="username" type="email" placeholder="Email" class="focus:shadow-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-cyan-50 bg-white bg-clip-padding p-3 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-cyan-300 focus:outline-none" />
         <div class="flex items-center justify-end">
           <mat-error class="text-rose-400 text-sm mr-2">Requires an email address</mat-error>
