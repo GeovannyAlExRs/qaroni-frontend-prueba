@@ -50,7 +50,7 @@ export class UserEffects {
   ))
 
   // TODO: User it is login
-  init: Observable<Action> = createEffect(() =>
+  /*init: Observable<Action> = createEffect(() =>
   this.actions.pipe(
     ofType(Users.INIT), // Define excuse of the transaction
     switchMap( async () => this.tokenService.getToken() ), // Get Token
@@ -76,5 +76,5 @@ export class UserEffects {
       }
     }
     )
-  ))
+  ))*/
 }
