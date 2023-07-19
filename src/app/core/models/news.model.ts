@@ -1,12 +1,12 @@
-export interface newsResponse {
+export interface News {
   count: number;
   included: null;
   input: string;
-  result: Result[];
+  result: NewsResult[];
   links: null;
 }
 
-export interface Result {
+export interface NewsResult {
   merchantId: number;
   status: string;
   name: null;
