@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TokenService } from '@services/token/token.service';
+import { UsersResponse } from '@store/users/users.store.interfaces';
 
 @Component({
   selector: 'app-header',
@@ -12,13 +14,22 @@ export class HeaderComponent implements OnInit {
   @Output() menuToggle = new EventEmitter<void>()
   @Output() signOut = new EventEmitter<void>()
   @Input() isAuthorized!: boolean | null
+  @Input() users!: UsersResponse | null
 
   istoken!: string | null
+  isId!: string | null
 
-  constructor() {}
+  constructor(private tokenService: TokenService) {}
+
+  ngDoCheck() : void {
+    this.istoken = this.tokenService.getToken()
+    this.isId = this.tokenService.getUserID()
+    //console.log(' isAuthorized '+ this.isAuthorized + ' tiene token: ' + this.istoken);
+  }
 
   ngOnInit(): void {
 
+    console.log('USERS: ' + this.users?.result[0].userId);
 
 
     this.mainMenu.defaultOptions = [

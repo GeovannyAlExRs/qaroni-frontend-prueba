@@ -26,7 +26,7 @@
 
   <div class="px-6 pt-4">
     <ul class="flex flex-col space-y-2">
-      <li [routerLink]="item.router" *ngFor="let item of menuList.accessLink" mat-list-item (click)="closeMenu()" class="cursor-pointer relative text-gray-500 hover:text-white focus-within:text-white">
+      <li [routerLink]="item.router" *ngFor="let item of menuList.accessLink" mat-list-item (click)="closeMenu()" [hidden]="(!istoken && item.name == 'Sign out') || (istoken && item.name == 'Login')" class="cursor-pointer relative text-gray-500 hover:text-white focus-within:text-white">
           <a (click)="logoutUser(item.name)" class="flex w-full py-2 pl-8 pr-4 text-sm rounded hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-500 focus:bg-gray-700">
               <i [ngClass]="['uil',item.icon]"></i>
               <span class="inline-block pl-2">{{item.name}}</span>

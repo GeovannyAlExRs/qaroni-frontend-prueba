@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TokenService } from '@services/token/token.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -15,7 +16,12 @@ export class SidebarComponent implements OnInit {
 
   istoken!: string | null
 
-  constructor() {}
+  constructor(private tokenService: TokenService) {}
+
+  ngDoCheck() : void {
+    this.istoken = this.tokenService.getToken()
+    //console.log(' isAuthorized '+ this.isAuthorized + ' tiene token: ' + this.istoken);
+  }
 
   ngOnInit(): void {
 

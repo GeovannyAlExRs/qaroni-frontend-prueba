@@ -16,7 +16,8 @@
 
           <div class="hidden md:block">
             <ul class="ml-10 flex items-baseline space-x-4">
-              <li [routerLink]="item.router" *ngFor="let item of mainMenu.defaultOptions" mat-list-item class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+              <li><small class="text-slate-100 text-lg">{{ isId ? isId : null }}</small></li>
+              <li [routerLink]="item.router" *ngFor="let item of mainMenu.defaultOptions" mat-list-item [hidden]="(!istoken && item.name == 'Sign out') || (istoken && item.name == 'Login')" class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
                 <a aria-current="page" (click)="logoutUser(item.name)">
                   <i [ngClass]="['uil',item.icon]"></i>
                   <span class="pl-1">{{item.name}}</span>
