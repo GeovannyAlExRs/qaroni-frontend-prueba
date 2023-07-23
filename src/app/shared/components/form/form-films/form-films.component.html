@@ -1,0 +1,67 @@
+<form [formGroup]="formParentFilms">
+  <div class="border-b mt-10 border-gray-900/10 pb-12">
+    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+      <div class="sm:col-span-3 sm:col-start-1">
+        <h2 class="text-base font-semibold leading-7 text-gray-900">Film/Movie</h2>
+        <p class="mt-1 text-sm leading-6 text-gray-600">Enter your favorite films.</p>
+      </div>
+      <div class="sm:col-span-3 mt-6 flex items-center justify-end gap-x-6">
+        <button (click)="addFilms()" class="rounded-md bg-sky-200 px-3 py-2 text-sm font-semibold text-slate-800 shadow-sm hover:bg-sky-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300">
+          <i class="uil uil-plus-circle"></i><span class="ml-2">Films</span>
+        </button>
+      </div>
+    </div>
+
+    <div>
+
+      <div formArrayName="films" *ngFor="let film of getCtrl('films', formParentFilms)?.controls; index as i" class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+
+        <div [formGroupName]="i" class="sm:col-span-2 sm:col-start-1">
+          <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Films Name</label>
+          <div class="mt-2">
+            <input formControlName="name" type="text" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <mat-error *ngIf="formFilms.get('name')?.touched " class="flex items-center justify-end ">
+              <small class="text-rose-400">{{getErrorMessageFilms('name')}}</small>
+            </mat-error>
+          </div>
+        </div>
+
+        <div [formGroupName]="i" class="sm:col-span-1">
+          <label for="director" class="block text-sm font-medium leading-6 text-gray-900">Director</label>
+          <div class="mt-2">
+            <input formControlName="director" type="text" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <mat-error *ngIf="formFilms.get('director')?.touched " class="flex items-center justify-end ">
+              <small class="text-rose-400">{{getErrorMessageFilms('director')}}</small>
+            </mat-error>
+          </div>
+        </div>
+
+        <div [formGroupName]="i" class="sm:col-span-1">
+          <label for="year" class="block text-sm font-medium leading-6 text-gray-900">Year</label>
+          <div class="mt-2">
+            <input formControlName="year" type="number" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <mat-error *ngIf="formFilms.get('year')?.touched " class="flex items-center justify-end ">
+              <small class="text-rose-400">{{getErrorMessageFilms('year')}}</small>
+            </mat-error>
+          </div>
+        </div>
+
+        <div [formGroupName]="i" class="sm:col-span-1">
+          <label for="award" class="block text-sm font-medium leading-6 text-gray-900">Won the Oscar</label>
+          <div class="mt-2">
+            <input formControlName="award"  type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+          </div>
+        </div>
+
+        <div class="sm:col-span-1">
+          <div class="mt-6 flex items-center justify-end gap-x-6">
+            <button (click)="removeFilms(i)" type="button" class="rounded-md bg-rose-200 px-3 py-2 text-sm font-semibold text-slate-800 shadow-sm hover:bg-rose-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-300">
+              <i class="uil uil-minus-circle"></i> <span class="ml-2">Remove</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</form>
