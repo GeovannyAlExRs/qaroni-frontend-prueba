@@ -1,5 +1,5 @@
 import { formatDate } from '@angular/common';
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Parent } from '@core/models/forms.model';
 
@@ -8,13 +8,16 @@ import { Parent } from '@core/models/forms.model';
   templateUrl: './forms.component.html',
   styleUrls: ['./forms.component.scss']
 })
-export class FormsComponent implements OnInit{//, OnChanges {
+export class FormsComponent implements OnInit {
 
   options: Array<any> = []
   title: string = 'User Form'
   subtitle: string = 'This information will be displayed publicly so be careful what you share.'
 
   anio: number = 17
+  save: boolean = false
+
+  //mode!: string
 
   //listCountry: Array<string> = ['Argentina', 'Brasil', 'Colombia', 'Ecuador', 'España', 'Francia', 'Alemania', 'Portugal'];
 
@@ -29,7 +32,6 @@ export class FormsComponent implements OnInit{//, OnChanges {
       {list: formatDate(new Date(), 'yyyy-MM-dd', 'en-US'), icon: 'uil uil-calender'},
       {list: 'New register', icon: 'uil uil-user-plus'}
     ]
-
     this.initFormParents()
   }
 
@@ -102,18 +104,15 @@ export class FormsComponent implements OnInit{//, OnChanges {
     if(options==='year' && this.formFilms.get(options)?.hasError('max')) {
       return'Please enter the correct year'
     }
+
     return this.formFilms.get(options)?.hasError('required') ? 'Required ' + options : ''
   }
 
   saveRegister() : void {
 
-    if(this.formParent.invalid) {
-      console.error('*** Error saving *** ' + JSON.stringify(this.formParent.value));
-      //this.getErrorMessage(this.formParent.controls[FormControl.name].value)
-      return;
+    if(this.formParent.valid){
+      this.save = true // To view tag <h1>
+      console.log('Save: ' + JSON.stringify(this.formParent.value));
     }
-
-    console.log('Save: ' + JSON.stringify(this.formParent.value));
-
   }
 }

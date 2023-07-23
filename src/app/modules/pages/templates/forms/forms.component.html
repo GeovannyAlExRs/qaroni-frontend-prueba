@@ -9,9 +9,9 @@
 
     <form [formGroup]="formParent" (click)="saveRegister()" class="w-9/12">
       <div class="space-y-12 justify-center">
-        <div class="border-b border-gray-900/10 pb-12">
 
-          <!-- FORM PARENT -->
+        <!-- FORM PARENT -->
+        <div class="border-b border-gray-900/10 pb-12">
           <div class="mt-10 border-gray-900/10 pb-12">
             <h3 class="mt-1 text-sm leading-6 text-gray-600">Register your personal information</h3>
 
@@ -185,12 +185,12 @@
       </div>
 
       <div class="mt-6 flex items-center justify-end gap-x-6">
-        <button type="submit" class="rounded-md w-40 bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+        <button [disabled]="formParent.invalid" type="submit" class="cursor-pointer rounded-md w-40 bg-gray-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
           <i class="uil uil-message"></i><span class="ml-2">Save</span>
         </button>
       </div>
     </form>
 
-    <h1>{{formParent.value | json}}</h1>
+    <h1 *ngIf="save" class="text-teal-400">{{formParent.value | json}}</h1>
   </div>
 </div>
