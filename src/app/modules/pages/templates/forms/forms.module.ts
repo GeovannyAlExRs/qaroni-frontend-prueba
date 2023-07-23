@@ -11,6 +11,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormPersonModule } from '@shared/components/form/form-person/form-person.module';
+import { FormChildrenModule } from '@shared/components/form/form-children/form-children.module';
+import { FormFilmsModule } from '@shared/components/form/form-films/form-films.module';
 
 
 @NgModule({
@@ -32,6 +35,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatButtonModule,
     MatCheckboxModule,
 
+    FormPersonModule,
+    FormChildrenModule,
+    FormFilmsModule
   ]
 })
 export class FormsParentModule { }
