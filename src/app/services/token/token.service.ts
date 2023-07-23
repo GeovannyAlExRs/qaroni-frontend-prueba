@@ -8,7 +8,7 @@ export class TokenService {
   constructor() { }
 
   saveToken(userId: string, token: string) {
-    console.log("Service SaveToken: UserID" + userId + ' Token: ' + token);
+    //console.log("Service SaveToken: UserID" + userId + ' Token: ' + token);
     localStorage.setItem('userId', userId);
     localStorage.setItem('access_token', token);
   }

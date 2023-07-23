@@ -34,7 +34,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   }
 
   private checkSession() : boolean {
-    console.log('[AUTH] SAVE TOKEN : ' + this.serviceToken.getToken());
+    //console.log('[AUTH] SAVE TOKEN : ' + this.serviceToken.getToken());
     if(!this.serviceToken.getToken()) {
       this.router.navigate(['/auth/login'])
     }
