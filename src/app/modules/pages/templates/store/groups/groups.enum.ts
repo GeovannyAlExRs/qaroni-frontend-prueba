@@ -1,9 +1,9 @@
 export enum Groups {
-  GROUPS_NEWS = '[Groups] Read: Start',
-  GROUPS_NEWS_SUCCESS = '[Groups] Read: Success',
-  GROUPS_NEWS_ERROR = '[Groups] Read: Error',
+  READ_GROUPS = '[Groups] Read: Start',
+  READ_GROUPS_SUCCESS = '[Groups] Read: Success',
+  READ_GROUPS_ERROR = '[Groups] Read: Error',
 
-  GROUPS_NEWS_BY_ID = '[GroupsID] Read: Start',
-  GROUPS_NEWS_BY_ID_SUCCESS = '[GroupsID] Read: Success',
-  GROUPS_NEWS_BY_ID_ERROR = '[GroupsID] Read: Error'
+  READ_GROUPS_BY_ID = '[GroupsID] Read: Start',
+  READ_GROUPS_BY_ID_SUCCESS = '[GroupsID] Read: Success',
+  READ_GROUPS_BY_ID_ERROR = '[GroupsID] Read: Error'
 }

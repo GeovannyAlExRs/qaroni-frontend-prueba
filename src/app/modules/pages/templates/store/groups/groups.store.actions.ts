@@ -5,19 +5,19 @@ import { Groups } from './groups.enum';
 
 // STATUS READ GROUPS
 export class ReadGroups implements Action {
-  readonly type = Groups.GROUPS_NEWS
+  readonly type = Groups.READ_GROUPS
   constructor() {}
 }
 
 export class ReadGroupsSuccess implements Action {
-  readonly type = Groups.GROUPS_NEWS_SUCCESS;
+  readonly type = Groups.READ_GROUPS_SUCCESS;
   constructor(public groupslist: GroupsResponse[]) {
     console.log('[ACTIONS] Groups List: ' + groupslist);
   }
 }
 
 export class ReadGroupsError implements Action {
-  readonly type = Groups.GROUPS_NEWS_ERROR;
+  readonly type = Groups.READ_GROUPS_ERROR;
   constructor(public error: string) {}
 }
 
