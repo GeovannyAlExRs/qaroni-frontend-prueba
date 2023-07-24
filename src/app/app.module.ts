@@ -24,6 +24,7 @@ import { AuthInterceptor } from '@core/interceptors/auth/auth.interceptor';
 
 import { effectsGroup } from '@modules/pages/templates/store/data.store';
 import { reducerGroup } from '@modules/pages/templates/store/data.store';
+import { FormsModule } from '@angular/forms';
 
 const StoreDevTools = !environment.production ? StoreDevtoolsModule.instrument({maxAge: 50}) : [];
 
@@ -40,6 +41,7 @@ const StoreDevTools = !environment.production ? StoreDevtoolsModule.instrument({
 
     HeaderModule,
     SidebarModule,
+    FormsModule,
 
     HttpClientModule,
 
