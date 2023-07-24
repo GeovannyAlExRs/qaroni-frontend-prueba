@@ -72,7 +72,7 @@ export class CardListComponent implements OnInit {
       },
       {
         date: 'Feb 16, 2021',
-        img: 'https://demos.creative-tim.com/notus-pro-react/static/media/city-1.501c0bb7.jpg',
+        img: 'https://demos.creative-tim.com/notus-pro-react/static/media/city-.jpg',
         title: 'Todo llega a su tiempo',
         shortDescription: "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta."
       },

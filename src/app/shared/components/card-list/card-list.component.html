@@ -6,7 +6,7 @@
   <article *ngFor="let item of news | search:search" class="bg-white flex max-w-xl flex-col items-start justify-between rounded-xl shadow-md">
 
     <div class="p-4 relative w-full">
-      <img src="https://demos.creative-tim.com/notus-pro-react/static/media/city-1.501c0bb7.jpg" class="w-full rounded-lg" alt="...">
+      <img appImgBroken [src]="item.img" class="w-full rounded-lg" alt="...">
     </div>
 
     <div class="p-10">

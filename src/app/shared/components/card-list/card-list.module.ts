@@ -4,6 +4,7 @@ import { CardListComponent } from './card-list.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { SearchModule } from '@shared/pipe/search/search.module';
+import { ImgBrokenModule } from '@shared/directives/img-broken/img-broken.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SearchModule } from '@shared/pipe/search/search.module';
 
     MatDialogModule,
 
-    SearchModule
+    SearchModule,
+    ImgBrokenModule,
   ],
   exports: [
     CardListComponent,
