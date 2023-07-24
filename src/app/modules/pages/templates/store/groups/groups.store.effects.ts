@@ -15,7 +15,7 @@ import { TokenService } from '@services/token/token.service'
 type Action = fromActions.All
 
 @Injectable()
-export class NewsEffects {
+export class GroupsEffects {
 
   constructor(private actions: Actions, private httpClient: HttpClient,
               private router: Router, private tokenService: TokenService) {}
