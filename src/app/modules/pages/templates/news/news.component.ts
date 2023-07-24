@@ -12,7 +12,7 @@ export class NewsComponent implements OnInit {
   title: string = 'News'
   subtitle: string = 'Every day better informed with the latest news.'
 
-  @Output() searchInmueble: string = ''
+  @Output() searchName: string = ''
 
   constructor() {}
 
@@ -25,6 +25,6 @@ export class NewsComponent implements OnInit {
 
   receiveData(event: string): void {
     console.log('Estoy desde el padre: ', event);
-    this.searchInmueble = event
+    this.searchName = event
   }
 }

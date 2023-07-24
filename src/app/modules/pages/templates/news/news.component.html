@@ -4,11 +4,12 @@
     <app-card-header-generic
             [title]="title"
             [subtitle]="subtitle"
-            [options1]="options">
+            [options1]="options"
+            (callbackData)="receiveData($event)">
 
     </app-card-header-generic>
 
-    <app-card-list></app-card-list>
+    <app-card-list [search]="searchName"></app-card-list>
 
   </div>
 </div>
