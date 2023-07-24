@@ -3,6 +3,17 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { ModalDetailComponent } from '../modal-detail/modal-detail.component';
 
+import { Observable, tap } from 'rxjs';
+import { Store, select } from '@ngrx/store';
+
+import * as fromRoot from '@modules/pages/templates/store/data.store'
+//import * as fromRoot from '@store/store'
+
+import { ReadNews } from '@modules/pages/templates/store/news/news.store.actions';
+import { NewsResponse } from '@modules/pages/templates/store/news/news.store.interfaces';
+import { getAllNews, getLoading } from '@modules/pages/templates/store/news/news.store.selectors';
+import { NewsResult } from '@core/models/news.model';
+
 @Component({
   selector: 'app-card-list',
   templateUrl: './card-list.component.html',
@@ -10,11 +21,29 @@ import { ModalDetailComponent } from '../modal-detail/modal-detail.component';
 })
 export class CardListComponent implements OnInit {
 
+  newslist$!: Observable<NewsResponse[] | any>
+  newsResult$!: Observable<NewsResult[] | null>
+  loading$!: Observable<boolean | null>
+  @Input() search: string = ''
+
+  newsR!: any
   news: Array<any> = []
 
-  constructor(private dialogRef: MatDialog) {}
+  constructor(private dialogRef: MatDialog, private store: Store<fromRoot.NewsListState>) {}
 
   ngOnInit(): void {
+
+    this.store.dispatch(new ReadNews())
+    this.loading$ = this.store.pipe(select(getLoading))
+    this.newslist$ = this.store.pipe(select(getAllNews))
+
+    this.newslist$.subscribe((res) => {
+    console.log('CARDS NEWS: ', res);
+
+    })
+
+    console.log('STORE: ', this.newslist$);
+
     this.mockupNews()
   }
 
@@ -25,6 +54,11 @@ export class CardListComponent implements OnInit {
         id: '123456789'
       }}
     );
+  }
+
+  receiveData(event: string): void {
+    this.search = event
+    console.log('Desde el padre: ', this.search);
   }
 
   mockupNews() : void {
