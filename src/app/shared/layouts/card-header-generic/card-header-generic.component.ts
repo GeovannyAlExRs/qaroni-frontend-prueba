@@ -16,10 +16,18 @@ export class CardHeaderGenericComponent implements OnInit {
 
   @Output() callbackData: EventEmitter<any> = new EventEmitter()
 
-  searchNews: string = ''
+  searchNames: string = ''
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  callSearch(valor: any): void {
+    if(valor.length >= 3) {
+      this.callbackData.emit(valor)
+    } else {
+      this.callbackData.emit(valor)
+    }
+  }
 
 }

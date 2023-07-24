@@ -23,7 +23,7 @@
               <i class="uil uil-search"></i>
             </span>
             <!-- [(ngModel)]="searchNews" (ngModelChange)="callSearch($event)" -->
-            <input placeholder="search {{title}}..." matInput class="border-blueGray-300 px-3 py-2 text-sm  w-full placeholder-blueGray-200 text-blueGray-700 relative bg-white rounded-md outline-none focus:ring focus:ring-lightBlue-500 focus:border-lightBlue-500 border border-solid transition duration-200 pl-10 ">
+            <input placeholder="search {{title}}..." [(ngModel)]="searchNames" (ngModelChange)="callSearch($event)"   matInput class="border-blueGray-300 px-3 py-2 text-sm  w-full placeholder-blueGray-200 text-blueGray-700 relative bg-white rounded-md outline-none focus:ring focus:ring-lightBlue-500 focus:border-lightBlue-500 border border-solid transition duration-200 pl-10 ">
           </div>
         </div>
       </span>
