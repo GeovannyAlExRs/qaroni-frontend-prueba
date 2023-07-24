@@ -21,6 +21,10 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { effects, reducers } from '@store/store';
 import { AuthInterceptor } from '@core/interceptors/auth/auth.interceptor';
 
+
+import { effectsGroup } from '@modules/pages/templates/store/data.store';
+import { reducerGroup } from '@modules/pages/templates/store/data.store';
+
 const StoreDevTools = !environment.production ? StoreDevtoolsModule.instrument({maxAge: 50}) : [];
 
 @NgModule({
@@ -45,6 +49,8 @@ const StoreDevTools = !environment.production ? StoreDevtoolsModule.instrument({
     }),
     EffectsModule.forRoot(effects),
 
+    StoreModule.forFeature('groups', reducerGroup),
+    EffectsModule.forFeature(effectsGroup),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
