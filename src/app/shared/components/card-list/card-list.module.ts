@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CardListComponent } from './card-list.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
+import { SearchModule } from '@shared/pipe/search/search.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     CommonModule,
 
     MatDialogModule,
+
+    SearchModule
   ],
   exports: [
     CardListComponent,
