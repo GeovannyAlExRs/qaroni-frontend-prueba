@@ -7,8 +7,10 @@
             [options1]="options">
 
     </app-card-header-generic>
-
-    <app-card-list></app-card-list>
+    <pre>{{groupslist$ | async | uppercase | json}}</pre>
+    <div *ngFor="let item of groupslist$ | async as newslist ">
+      <p>{{item.count}}</p>
+    </div>
 
   </div>
 </div>

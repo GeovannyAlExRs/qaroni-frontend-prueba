@@ -3,8 +3,8 @@ import * as fromActions from "@modules/pages/templates/store/news/news.store.act
 
 // DB Local
 export interface NewsState {
-  newslist: NewsResponse[] | null;
-  news: NewsResponse | null;
+  newslist: NewsResponse[] | any;
+  news: NewsResponse | any;
   loading: boolean | null;
   error: string | null;
 }
