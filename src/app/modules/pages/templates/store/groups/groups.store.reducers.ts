@@ -3,8 +3,8 @@ import * as fromActions from "@modules/pages/templates/store/groups/groups.store
 
 // DB Local
 export interface GroupsState {
-  groupslist: GroupsResponse[] | null;
-  groups: GroupsResponse | null;
+  groupslist: GroupsResponse[] | any;
+  groups: GroupsResponse | any;
   loading: boolean | null;
   error: string | null;
 }

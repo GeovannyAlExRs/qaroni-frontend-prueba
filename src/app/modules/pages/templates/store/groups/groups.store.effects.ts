@@ -26,7 +26,7 @@ export class GroupsEffects {
       ofType(Groups.READ_GROUPS),
       switchMap( async () => this.tokenService.getToken()), // Get Token
       switchMap(() =>
-        this.httpClient.get<GroupsResponse[]>(`${environment.url}merchants/${environment.merchantId}/news`) // invoce la URL
+        this.httpClient.get<GroupsResponse[]>(`${environment.url}merchants/${environment.merchantId}/groups`) // invoce la URL
         .pipe(
           delay(1000),
           map((newslist: GroupsResponse[]) => new fromActions.ReadGroupsSuccess(newslist)),
