@@ -1,7 +1,6 @@
 import { formatDate } from '@angular/common';
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Parent } from '@core/models/forms.model';
 
 @Component({
   selector: 'app-forms',
