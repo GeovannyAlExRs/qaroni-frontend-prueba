@@ -7,9 +7,9 @@
         <p class="mt-1 text-sm leading-6 text-gray-600">Enter data in case of having children.</p>
       </div>
       <div class="sm:col-span-3 mt-6 flex items-center justify-end gap-x-6">
-        <button (click)="addChildren()" class="rounded-md bg-sky-200 px-3 py-2 text-sm font-semibold text-slate-800 shadow-sm hover:bg-sky-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300">
+        <a (click)="addChildren()" class="rounded-md bg-sky-200 px-3 py-2 text-sm font-semibold text-slate-800 shadow-sm hover:bg-sky-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300">
           <i class="uil uil-plus-circle"></i><span class="ml-2">Children</span>
-        </button>
+        </a>
       </div>
     </div>
 
@@ -47,9 +47,9 @@
 
       <div class="sm:col-span-1">
         <div class="mt-6 flex items-center justify-end gap-x-6">
-          <button (click)="removeChildren(i)" type="button" class="rounded-md bg-rose-200 px-3 py-2 text-sm font-semibold text-slate-800 shadow-sm hover:bg-rose-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-300">
+          <a (click)="removeChildren(i)" class="rounded-md bg-rose-200 px-3 py-2 text-sm font-semibold text-slate-800 shadow-sm hover:bg-rose-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-300">
             <i class="uil uil-minus-circle"></i> <span class="ml-2">Remove</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>
